@@ -5,8 +5,8 @@
 // import switchOnWheel from './utils/switchPageOnWheel';
 
 // scss
-import 'animate.css';
-import '../scss/index.scss';
+import "animate.css"
+import "../scss/index.scss"
 
 // search the DOM
 // const wrapper = document.querySelector('.wrapper');
@@ -15,52 +15,52 @@ import '../scss/index.scss';
 // const rocketParent = document.querySelector('.rocket');
 // const headerTitle = document.querySelector('.header-title');
 
-const navbarDOM = document.querySelector('.navbar');
-const hiddenMenu = document.querySelector('.icon');
-const homepageDOM = document.querySelector('.homepage');
-const btn1 = document.querySelector('.btn-1');
-const btn2 = document.querySelector('.btn-2');
-const table1 = document.querySelector('.tb-1');
-const table2 = document.querySelector('.tb-2');
+const navbarDOM = document.querySelector(".navbar")
+const hiddenMenu = document.querySelector(".icon")
+const homepageDOM = document.querySelector(".homepage")
+const btn1 = document.querySelector(".btn-1")
+const btn2 = document.querySelector(".btn-2")
+const table1 = document.querySelector(".tb-1")
+const table2 = document.querySelector(".tb-2")
 
 // smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault()
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        });
-    });
-});
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  })
+})
 
 // schedule changing
-btn1.addEventListener('click', () => {
-    if(table1.classList.contains("tb-inactive")) {
-        tb_switch_active(btn1, table1);
-        tb_switch_inactive(btn2, table2);
-    }
-});
+btn1.addEventListener("click", () => {
+  if (table1.classList.contains("tb-inactive")) {
+    tb_switch_active(btn1, table1)
+    tb_switch_inactive(btn2, table2)
+  }
+})
 
-btn2.addEventListener('click', () => {
-    if(table2.classList.contains("tb-inactive")) {
-        tb_switch_active(btn2, table2);
-        tb_switch_inactive(btn1, table1);
-    }
-});
+btn2.addEventListener("click", () => {
+  if (table2.classList.contains("tb-inactive")) {
+    tb_switch_active(btn2, table2)
+    tb_switch_inactive(btn1, table1)
+  }
+})
 
-function tb_switch_active(btn, table){
-    table.classList.add("tb-active");
-    table.classList.remove("tb-inactive");
-    btn.classList.add("btn-active");
-    btn.classList.remove("btn-inactive");
+function tb_switch_active(btn, table) {
+  table.classList.add("tb-active")
+  table.classList.remove("tb-inactive")
+  btn.classList.add("btn-active")
+  btn.classList.remove("btn-inactive")
 }
-function tb_switch_inactive(btn, table){
-    table.classList.add("tb-inactive");
-    table.classList.remove("tb-active");
-    btn.classList.add("btn-inactive");
-    btn.classList.remove("btn-active");
+function tb_switch_inactive(btn, table) {
+  table.classList.add("tb-inactive")
+  table.classList.remove("tb-active")
+  btn.classList.add("btn-inactive")
+  btn.classList.remove("btn-active")
 }
 
 // hiddenMenu.addEventListener('click', () => {
