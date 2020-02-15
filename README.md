@@ -66,12 +66,22 @@ home
 
 ## Contributor
 #### Developers
+* [desguerra](https://github.com/desguerra) - **Nikki Esguerra**
+* [bitwhys](https://github.com/bitwhys) - **George Bockari**
+* [Kaleidics](https://github.com/Kaleidics) - **Eddie Chu**
+* [beam-ntth](https://github.com/beam-ntth) - **Natheethorn Teacharuangchit**
+
+#### Designers
+* [ejwlee](https://www.linkedin.com/in/ejwlee/) - **Erica Lee**
+* [ashleylnguyen](https://www.linkedin.com/in/ashleylnguyen/) - **Ashley Nguyen**
+
+#### Previous Developers
+2018
+* [code-io](https://github.com/code-io) - **Munir Sayani**
+* [LambertTran](https://github.com/LambertTran) - **Lambert Tran**
 * [BishalT](https://github.com/BishalT) - **Bishal Thapa**
 * [DerLee4](https://github.com/DerLee4) - **Derek Lee**
 
-#### Designers
+#### Previous Designers
+2018
 * [genesiating](https://www.linkedin.com/in/genesiating/) - **Genesia Ting**
-
-#### Previous Developers
-* [code-io](https://github.com/code-io) - **Munir Sayani**
-* [LambertTran](https://github.com/LambertTran) - **Lambert Tran**

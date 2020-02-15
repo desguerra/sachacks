@@ -1,3 +1,8 @@
+$primary: #002561;
+$secondary: #fbb03a;
+
+@import "../../node_modules/bootstrap/scss/bootstrap"
+
 // font size
 $title : 3.5em;
 $titleWeight: 500;
@@ -18,6 +23,7 @@ $blue: #72adc4;
 $navy: #002561;
 $gray: #5A5A5A;
 $hoverblue: #0c6298;
+
 
 // layout
 @mixin flex-row {
@@ -83,21 +89,24 @@ $hoverblue: #0c6298;
 @import './components/header.scss';
 @import './components/homepage.scss';
 @import './components/about.scss';
+@import './components/schedule.scss';
 @import './components/FAQ.scss';
 @import './components/sponsor.scss';
+@import './components/values.scss';
 @import './components/footer.scss';
 
+html {
+    background-image: url('/images/galaxy_rawtexture.jpeg');
+}
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   background-size: cover;
-  overflow: scroll, hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
   font-family: 'Avenir-Regular', 'Avenir-Thin';
 }
-
 p{
   letter-spacing: $spacing;
   @include desktop-and-up {
@@ -111,7 +120,8 @@ h1{
 
 // main background
 .wrapper {
-  background-color:#002561;
+    background-image: url('../../images/galaxy_rawtexture.jpeg');
+
   position: relative;
   background-attachment: fixed;
   margin: 0;
@@ -126,26 +136,6 @@ h1{
     height: 100%;
     // overflow: hidden;
   }
-  .logo {           // MLH logo
-        display:block;
-        max-width:100px;
-        min-width:60px;
-        position:fixed;
-        top:0;
-        margin-top: 50px;
-        width:8%;
-        z-index:10000;
-        img {
-            padding: 0;
-            left: 50px;
-        }
-        @media screen and (min-width: 992px){
-            img {
-                padding-left: 30px;
-            }
-            right: 50px;
-        }
-    }
 }
 
 // .page {
@@ -165,17 +155,11 @@ h1{
 }
 
 .homepage {
-    padding-top: 75px;
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     @include desktop-and-up {
+        padding-top: 50px;
         padding-bottom: 25px;
     }
 }
-
 
 .btn {
   color: white;
@@ -190,28 +174,35 @@ h1{
   margin-bottom: 20px;
   border: 2px solid #72adc4;
   transition: all 0.300s ease-in;
-  width: 300px;
-  height: 90px;
+  width: 200px; //initially 250
+  height: 60px;
   margin-bottom: 20px;
-  letter-spacing: 1.3pt; }
-  .btn:hover {
-    background-color: #fbb03a;
-    border: 2px solid #fbb03a;
-    cursor: pointer; }
-  .btn:focus {
-    outline: 0; }
+  letter-spacing: 1.3pt;
+  &:hover{
+    background-color: $yellow;
+    border: 2px solid $yellow;
+    cursor: pointer;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
 
 .btn-home {
-  border: 1px solid white; }
-  .btn-home:hover {
-    background-color: #72adc4;
+  border: 1px solid white;
+  &:hover {
+    background-color: $blue;
     border: 2px solid white;
-    cursor: pointer; }
+    cursor: pointer;
+  }
+}
 
 .btn-active {
   background-color: #fbb03a;
   border: 2px solid #fbb03a;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .btn-sponsor {
-  border: 2px solid #fbb03a; }
+  border: 2px solid #fbb03a;
+}

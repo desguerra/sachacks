@@ -21,16 +21,16 @@ function activate() {
   }
 
   carousel.timebar.style.width = width + 'px';
-  carousel.leftScroll.addEventListener('click',handleLeftClick)
+  carousel.leftScroll.addEventListener('click', handleLeftClick);
   carousel.rightScroll.addEventListener('click', handleRightClick);
 }
 
 function handleRightClick() {
-  mouseWheelHandler(-100,carousel.items)
+  mouseWheelHandler(-100, carousel.items);
 }
 
 function handleLeftClick() {
-  mouseWheelHandler(100,carousel.items)
+  mouseWheelHandler(100, carousel.items);
 }
 
 function mouseWheelHandler(distance, element) {
@@ -38,18 +38,16 @@ function mouseWheelHandler(distance, element) {
 
   if (typeof distance === 'number') {
     delta = distance;
-  }
-  else {
+  } else {
     if (distance.deltaX !== 0) {
       delta = distance.deltaX;
-    }
-    else {
+    } else {
       delta = distance.deltaY;
     }
     distance.prevenDefault();
   }
 
-  element.scrollLeft -= (delta);
+  element.scrollLeft -= delta;
 }
 
 export default carousel;
