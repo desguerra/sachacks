@@ -147,7 +147,7 @@ function timer(date) {
 }
 
 $(document).ready(function () {
-    var hackEnd = '11/18/2018 11:00:00 AM';
+    var hackEnd = '02/23/2020 11:00:00 AM';
     timer(hackEnd);
 });
 

@@ -88,7 +88,7 @@
   .timer .timer-number, .timer span {
     font-size: 3.0em; } }
 .timer span, .timer #days, .timer #sec {
-  font-family: "Avenir-Regular" !important;
+  /* font-family: "Avenir-Regular" !important; */
   font-weight: 1000;
  }
 .timer #hours, .timer #min {
