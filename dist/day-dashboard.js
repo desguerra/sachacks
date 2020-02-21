@@ -1,4 +1,7 @@
 const dashboardTimer = document.querySelector('.timer__time');
+const hoursContainer = document.querySelector('.timer__time__hours .time');
+const minutesContainer = document.querySelector('.timer__time__minutes .time');
+const secondsContainer = document.querySelector('.timer__time__seconds .time');
 const timerEventName = document.querySelector('#event-name');
 // dashboard timer
 
@@ -14,7 +17,7 @@ const activities = [
 ];
 
 function timer(seconds) {
-  let currentEvent = activities.shift()
+  let currentEvent = activities.shift();
   setInterval(() => {
     const remainingTime = currentEvent.timeStamp - Date.now();
     const hours = remainingTime / (1000 * 60 * 60);
@@ -22,12 +25,12 @@ function timer(seconds) {
     const seconds = (minutes - Math.trunc(minutes)) * 60;
 
     // if all times are zero move to next event
-    if(!hours && !minutes && !seconds) {
-      currentEvent = activities.shift()
+    if (!hours && !minutes && !seconds) {
+      currentEvent = activities.shift();
     }
-    dashboardTimer.textContent = `${Math.trunc(hours)}:${Math.trunc(
-      minutes
-    )}:${Math.trunc(seconds)}`;
+    hoursContainer.textContent = `${Math.trunc(hours)} :`;
+    minutesContainer.textContent = `${Math.trunc(minutes)} :`;
+    secondsContainer.textContent = Math.trunc(seconds);
     timerEventName.textContent = currentEvent.name;
   }, 1000);
 }
