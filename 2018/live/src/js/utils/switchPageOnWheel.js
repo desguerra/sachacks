@@ -10,26 +10,27 @@ const switchPageOnWheel = (function() {
     let scrolled = false;
     // delay created inbetween scroll inputs
     function debounce(event, method, delay) {
-      clearTimeout(method._tId);
-      method._tId = setTimeout(function() {
+    clearTimeout(method._tId);
+    method._tId= setTimeout(function(){
         method(event);
-      }, delay);
+        }, delay);
     }
     window.addEventListener('mousewheel', function(event) {
-      debounce(event, handleScrollDelay, 400);
+        debounce(event,handleScrollDelay, 400);
     });
   };
 
   return {
     init: init,
-  };
+  }
 
   // handle switching page index base on direction of wheel moving
   function handleWheelMove(event) {
     if (event.deltaY > 50) {
       scrollDown = true;
       checkDirection();
-    } else if (event.deltaY < -50) {
+    }
+    else if (event.deltaY < -50) {
       scrollDown = false;
       checkDirection();
     }
@@ -47,25 +48,27 @@ const switchPageOnWheel = (function() {
       }
     }
     function moveDownOnePage() {
-      if (pageIndex < listBtns.length - 1) {
-        ++pageIndex;
+      if ( pageIndex < listBtns.length - 1 ) {
+        ++ pageIndex;
       } else {
         pageIndex = 0;
       }
     }
     function moveUpOnePage() {
-      if (pageIndex > 0) {
-        --pageIndex;
+      if ( pageIndex > 0 ) {
+        -- pageIndex;
       } else {
-        pageIndex = listBtns.length - 1;
+        pageIndex = listBtns.length -1;
       }
     }
   }
 
-  function handleScrollDelay(event) {
-    handleWheelMove(event);
-    listBtns[pageIndex].click();
+  function handleScrollDelay(event){
+      handleWheelMove(event);
+      listBtns[pageIndex].click();
   }
+
 })();
+
 
 export default switchPageOnWheel;

@@ -3,10 +3,11 @@ const changeBgImg = {
   target: function(target) {
     if (!target) {
       return console.error('There is not target to change background');
-    } else {
+    } 
+    else {
       target.style.backgroundImage = `url(${path2Img})`;
     }
-  },
-};
+  }
+}
 
 export default changeBgImg;

@@ -1,7 +1,7 @@
 // font size
 $title : 3.5em;
 $titleWeight: 500;
-$header: 2.4em;
+$header: 2.0em;
 $titleMobile: 2.0em;
 $detail: 1.0em;
 $detailHeight: 25pt;
@@ -35,6 +35,31 @@ $hoverblue: #0c6298;
   align-items: center;
 }
 
+// // break points
+// @mixin phone-to-tablet {
+//   @media screen and (max-width: 767px) {
+//     @content;
+//   }
+// }
+//
+// @mixin tablet-to-laptop {
+//   @media screen and (min-width: 768px) {
+//     @content;
+//   }
+// }
+//
+// @mixin laptop-to-desktop {
+//   @media screen and (max-width: 1679) {
+//     @content;
+//   }
+// }
+//
+// @mixin desktop-and-up {
+//   @media screen and (min-width: 1680px) {
+//     @content;
+//   }
+// }
+
 // break points
 @mixin phone-to-tablet {
   @media screen and (max-width: 767px) {
@@ -54,17 +79,14 @@ $hoverblue: #0c6298;
 }
 
 @import './components/font.scss';
-@import './components/timer.scss';
-@import './components/map.scss';
-@import './components/workshops.scss';
-@import './components/schedule.scss';
-@import './components/prizes.scss';
-@import './components/mentor.scss';
-@import './components/live-feed.scss';
+@import './components/navbar.scss';
+@import './components/header.scss';
+@import './components/homepage.scss';
+@import './components/about.scss';
+@import './components/FAQ.scss';
+@import './components/sponsor.scss';
+@import './components/footer.scss';
 
-html {
-    background-image: url('/images/galaxy_rawtexture.jpeg');
-}
 html, body {
   width: 100%;
   height: 100%;
@@ -82,7 +104,6 @@ p{
     letter-spacing: $spacingDesktop;
   }
 }
-
 h1{
   margin: 0;
   padding: 0;
@@ -90,7 +111,7 @@ h1{
 
 // main background
 .wrapper {
-    background-image: url('../../images/galaxy_rawtexture.jpeg');
+  background-color:#002561;
   position: relative;
   background-attachment: fixed;
   margin: 0;
@@ -98,64 +119,33 @@ h1{
   width: 100%;
   height: 100%;
   overflow: scroll;
+  // background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   @include desktop-and-up {
     height: 100%;
+    // overflow: hidden;
   }
-}
-
-
-#map_overlay {
-    position: fixed;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    transition: all .5s ease;
-    z-index: 2;
-    cursor: pointer;
-    img {
-        width: 80%;
-        @media screen and (min-width: 1024px){
-            width: 50%;
+  .logo {           // MLH logo
+        display:block;
+        max-width:100px;
+        min-width:60px;
+        position:fixed;
+        top:0;
+        margin-top: 50px;
+        width:8%;
+        z-index:10000;
+        img {
+            padding: 0;
+            left: 50px;
+        }
+        @media screen and (min-width: 992px){
+            img {
+                padding-left: 30px;
+            }
+            right: 50px;
         }
     }
-    .btn-map{
-        margin-top: 10px;
-        width: 25%;
-    }
-}
-.map-button{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    .btn-map {
-      font-weight: 900;
-      color: white;
-      background-color: $navy;
-      font-size: 1.0em;
-      width: 35%;
-      padding: 5px 20px;
-      text-align: center;
-      margin: 0 20px;
-      margin-bottom: 20px;
-      transition: all 0.300s ease-in;
-      height: 75px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.08), 0 6px 20px 0 rgba(0,0,0,0.08);
-      border-radius: 7px;
-      &:focus {
-          outline: 0;
-          }
-      }
 }
 
 // .page {
@@ -167,85 +157,61 @@ h1{
   min-height: 70vh;
 }
 
-
-
 .padding-top {
-  padding: 40px 30px 40px 30px;
-  @media screen and (max-width: 767px){
-      padding-left: 10px;
-      padding-right: 10px;
-  }
-}
-
-// homepage
-.homepage{
-  text-align: center;
-  padding-top: 75px;
-  padding-bottom: 100px!important;
+  padding: 20px 20px 20px 20px;
   @include desktop-and-up {
-      padding-bottom: 25px;
-  }
-  img{
-    max-width: 100%;
-    width: 75%;
-    @media screen and (min-width:768px) {
-    width: 23vw;
-        }
-    @media screen and (min-width: 1023px) {
-        width: 40vw;
-    }
-}
-
-  .detail {
-    max-width: 800px;
-    padding-top: 20px;
-    margin: 0 auto;
-    h1 {
-        font-size: 25px;
-        color: $yellow;
-        letter-spacing: 1px;
-        font-weight: 100!important;
-    }
+    padding: 75px 50px 75px 50px;
   }
 }
 
-.columns {
+.homepage {
+    padding-top: 75px;
+    height:100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    .left-column, .right_column {
-        width: 90%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    @media screen and (max-width: 1024px){
-        align-items: center;
-    }
-    @media screen and (min-width: 1025px){
-        flex-direction: row;
-        .left-column, .right_column {
-            width: 36%;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-    }
-}
-
-.tile {
-    background-color: white;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    h1 {
-        font-family: 'Avenir-Bold';
-        font-weight: 500!important;
-        font-size: $titleMobile!important;
-        text-align: center;
-        @media screen and (min-width: 768px){
-            font-size: 2.0em!important;
-            text-align: left;
-        }
-        color: $navy;
+    align-items: center;
+    @include desktop-and-up {
         padding-bottom: 25px;
     }
 }
+
+
+.btn {
+  color: white;
+  background-color: transparent;
+  font-size: 1.1em;
+  font-weight: 900;
+  font-weight: heavy;
+  padding: 5px 20px;
+  text-align: center;
+  border-radius: 7px;
+  margin: 0 20px;
+  margin-bottom: 20px;
+  border: 2px solid #72adc4;
+  transition: all 0.300s ease-in;
+  width: 300px;
+  height: 90px;
+  margin-bottom: 20px;
+  letter-spacing: 1.3pt; }
+  .btn:hover {
+    background-color: #fbb03a;
+    border: 2px solid #fbb03a;
+    cursor: pointer; }
+  .btn:focus {
+    outline: 0; }
+
+.btn-home {
+  border: 1px solid white; }
+  .btn-home:hover {
+    background-color: #72adc4;
+    border: 2px solid white;
+    cursor: pointer; }
+
+.btn-active {
+  background-color: #fbb03a;
+  border: 2px solid #fbb03a;
+  cursor: pointer; }
+
+.btn-sponsor {
+  border: 2px solid #fbb03a; }
