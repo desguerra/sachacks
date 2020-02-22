@@ -3,6 +3,8 @@ const hoursContainer = document.querySelector('.timer__time__hours .time');
 const minutesContainer = document.querySelector('.timer__time__minutes .time');
 const secondsContainer = document.querySelector('.timer__time__seconds .time');
 const timerEventName = document.querySelector('#event-name');
+const dayOneButton = document.querySelector("#dy1")
+const dayTwoButton = document.querySelector("#dy2")
 // dashboard timer
 
 const activities = [
@@ -17,21 +19,33 @@ const activities = [
 ];
 
 function timer(seconds) {
-  let currentEvent = activities.shift();
+  const END_DATE = new Date('2020-02-22T15:00:00')
   setInterval(() => {
-    const remainingTime = currentEvent.timeStamp - Date.now();
+    const remainingTime = END_DATE - Date.now();
     const hours = remainingTime / (1000 * 60 * 60);
     const minutes = (hours - Math.trunc(hours)) * 60;
     const seconds = (minutes - Math.trunc(minutes)) * 60;
 
-    // if all times are zero move to next event
-    if (!hours && !minutes && !seconds) {
-      currentEvent = activities.shift();
-    }
     hoursContainer.textContent = `${Math.trunc(hours)} :`;
     minutesContainer.textContent = `${Math.trunc(minutes)} :`;
     secondsContainer.textContent = Math.trunc(seconds);
-    timerEventName.textContent = currentEvent.name;
   }, 1000);
 }
+const handleScheduleChange = evt => {
+  console.log(evt);
+  const current = document.querySelector(".active")
+  const update = document.querySelector(".hidden")
+  console.log("current",current);
+  console.log("update", update);
+
+  current.classList.remove("active")
+  current.classList.add("hidden")
+
+  update.classList.remove("hidden")
+  update.classList.add("active")
+}
+
+dayOneButton.addEventListener("click", handleScheduleChange)
+dayTwoButton.addEventListener("click", handleScheduleChange)
+
 timer();
