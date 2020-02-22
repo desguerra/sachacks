@@ -19,7 +19,7 @@ const activities = [
 ];
 
 function timer(seconds) {
-  const END_DATE = new Date('2020-02-22T15:00:00')
+  const END_DATE = new Date('2020-02-24T15:00:00')
   setInterval(() => {
     const remainingTime = END_DATE - Date.now();
     const hours = remainingTime / (1000 * 60 * 60);
